@@ -1,146 +1,125 @@
-/* Reset some default styling */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body and font styling */
+/* Body and Font Styling */
 body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    background-color: #fafafa;
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
     color: #333;
-    margin: 20px;
-    font-size: 16px;
+    margin: 0;
+    padding: 0;
 }
 
-/* Header styling */
+/* Header */
 header {
     text-align: center;
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
 }
 
 header h1 {
-    font-size: 3em;
-    font-weight: 600;
-    color: #ff7f50; /* coral */
+    font-family: 'EB Garamond', serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #333;
 }
 
 header p {
     font-size: 1.2em;
-    color: #fff;
+    color: #666;
 }
 
-/* Filter section styling */
+/* Filter Section */
 .filter-section {
-    max-width: 800px;
-    margin: 0 auto 30px;
     display: flex;
-    gap: 10px;
     justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    padding: 0 20px;
 }
 
-.filter-section input[type="text"],
+.filter-section input,
 .filter-section select {
-    padding: 12px;
-    border-radius: 20px;
-    border: 1px solid #ddd;
+    padding: 10px;
     font-size: 1em;
-    width: 200px;
-    transition: all 0.3s ease;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
 }
 
-.filter-section input[type="text"]:focus,
+.filter-section input:focus,
 .filter-section select:focus {
-    border-color: #ff7f50;
+    border-color: #333;
     outline: none;
 }
 
-/* Styling for the posts section */
+/* Posts Section */
 .posts {
     max-width: 800px;
     margin: 0 auto;
+    padding: 20px;
 }
 
-/* Post styling */
 .post {
-    background: #fff;
-    padding: 25px;
+    background-color: #fff;
+    padding: 20px;
     margin: 20px 0;
-    border: 1px solid #eee;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .post h2 {
-    color: #333;
+    font-family: 'EB Garamond', serif;
     font-size: 1.8em;
-    font-weight: 600;
+    color: #333;
     margin-bottom: 10px;
 }
 
+.date {
+    font-size: 0.9em;
+    color: #999;
+    margin-bottom: 15px;
+}
+
 .post p {
-    color: #555;
-    line-height: 1.8;
     font-size: 1em;
-    margin: 10px 0;
+    line-height: 1.6;
+    color: #555;
 }
 
-.post p:first-of-type {
-    color: #ff7f50;
-    font-weight: 500;
-}
-
-/* Footer styling */
+/* Footer */
 footer {
     text-align: center;
-    margin-top: 40px;
+    padding: 20px;
     font-size: 0.9em;
     color: #777;
-    padding: 10px;
-    font-weight: 500;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
 }
 
-/* Link styles */
-a {
-    color: #ff7f50;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Media queries for responsiveness */
+/* Responsive Design */
 @media (max-width: 600px) {
-    .filter-section {
-        flex-direction: column;
-        gap: 5px;
-    }
-
     header h1 {
-        font-size: 2.2em;
+        font-size: 2em;
     }
 
     .post h2 {
         font-size: 1.5em;
     }
 
-    .filter-section input[type="text"],
-    .filter-section select {
-        width: 100%;
+    .filter-section {
+        flex-direction: column;
+        gap: 10px;
     }
 }
