@@ -13,23 +13,69 @@
         <p>Your daily dose of knowledge</p>
     </header>
 
+    <section class="filter-section">
+        <input type="text" id="search" placeholder="Search posts..." onkeyup="filterPosts()">
+        <select id="category-filter" onchange="filterPosts()">
+            <option value="all">All Categories</option>
+            <option value="technology">Technology</option>
+            <option value="lifestyle">Lifestyle</option>
+            <option value="education">Education</option>
+        </select>
+    </section>
+
     <section class="posts">
-        <article class="post">
-            <h2>First Blog Post</h2>
+        <article class="post" data-category="technology">
+            <h2>Understanding AI and Machine Learning</h2>
             <p>Published on October 20, 2024</p>
-            <p>This is the content of my first blog post. Here, you can write whatever you want to share with the world!</p>
+            <p>This post explains the basics of AI and Machine Learning, a technology that's transforming the world.</p>
         </article>
 
-        <article class="post">
-            <h2>Second Blog Post</h2>
+        <article class="post" data-category="lifestyle">
+            <h2>5 Tips for a Healthier Lifestyle</h2>
             <p>Published on October 21, 2024</p>
-            <p>Here is some more content in the second blog post. You can continue adding more articles in this format.</p>
+            <p>Explore simple changes you can make in your daily life to live a healthier lifestyle.</p>
+        </article>
+
+        <article class="post" data-category="education">
+            <h2>The Importance of Lifelong Learning</h2>
+            <p>Published on October 22, 2024</p>
+            <p>This article dives into the benefits of continuous learning in a rapidly changing world.</p>
+        </article>
+
+        <article class="post" data-category="technology">
+            <h2>Future of Blockchain Technology</h2>
+            <p>Published on October 23, 2024</p>
+            <p>A closer look at how blockchain technology is set to disrupt various industries in the coming years.</p>
         </article>
     </section>
 
     <footer>
         <p>Created by [Your Name] - © 2024</p>
     </footer>
+
+    <script>
+        // JavaScript function to filter posts by search term and category
+        function filterPosts() {
+            const searchInput = document.getElementById('search').value.toLowerCase();
+            const categoryFilter = document.getElementById('category-filter').value;
+            const posts = document.querySelectorAll('.post');
+
+            posts.forEach(post => {
+                const title = post.querySelector('h2').innerText.toLowerCase();
+                const content = post.querySelector('p').innerText.toLowerCase();
+                const category = post.getAttribute('data-category');
+
+                const matchesSearch = title.includes(searchInput) || content.includes(searchInput);
+                const matchesCategory = (categoryFilter === 'all' || category === categoryFilter);
+
+                if (matchesSearch && matchesCategory) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
