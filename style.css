@@ -5,32 +5,42 @@
     box-sizing: border-box;
 }
 
+/* Body and font styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #fafafa;
     color: #333;
     margin: 20px;
+    font-size: 16px;
 }
 
+/* Header styling */
 header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 2.5em;
-    color: #333;
+    font-size: 3em;
+    font-weight: 600;
+    color: #ff7f50; /* coral */
 }
 
 header p {
     font-size: 1.2em;
-    color: #777;
+    color: #fff;
 }
 
+/* Filter section styling */
 .filter-section {
     max-width: 800px;
-    margin: 0 auto 20px;
+    margin: 0 auto 30px;
     display: flex;
     gap: 10px;
     justify-content: center;
@@ -38,40 +48,99 @@ header p {
 
 .filter-section input[type="text"],
 .filter-section select {
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 20px;
     border: 1px solid #ddd;
     font-size: 1em;
     width: 200px;
+    transition: all 0.3s ease;
 }
 
+.filter-section input[type="text"]:focus,
+.filter-section select:focus {
+    border-color: #ff7f50;
+    outline: none;
+}
+
+/* Styling for the posts section */
 .posts {
     max-width: 800px;
     margin: 0 auto;
 }
 
+/* Post styling */
 .post {
     background: #fff;
-    padding: 20px;
+    padding: 25px;
     margin: 20px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .post h2 {
     color: #333;
     font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .post p {
-    margin: 10px 0;
     color: #555;
+    line-height: 1.8;
+    font-size: 1em;
+    margin: 10px 0;
 }
 
+.post p:first-of-type {
+    color: #ff7f50;
+    font-weight: 500;
+}
+
+/* Footer styling */
 footer {
     text-align: center;
     margin-top: 40px;
     font-size: 0.9em;
     color: #777;
+    padding: 10px;
+    font-weight: 500;
+}
+
+/* Link styles */
+a {
+    color: #ff7f50;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    .filter-section {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    .post h2 {
+        font-size: 1.5em;
+    }
+
+    .filter-section input[type="text"],
+    .filter-section select {
+        width: 100%;
+    }
 }
